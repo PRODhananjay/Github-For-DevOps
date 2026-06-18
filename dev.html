@@ -1,0 +1,315 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Flower Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0f14;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,105,180,.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255,182,193,.12), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255,20,147,.1), transparent 40%);
+    z-index:-2;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.05);
+    z-index:1000;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    animation:fadeUp 1.2s ease;
+}
+
+.hero h1{
+    font-size:6rem;
+    font-family:'Cormorant Garamond',serif;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.2rem;
+    opacity:.9;
+}
+
+.btn{
+    margin-top:30px;
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(45deg,#ff4fa3,#ff80bf);
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.section{
+    padding:100px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:4rem;
+    margin-bottom:60px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.07);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    overflow:hidden;
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:20px;
+    text-align:center;
+}
+
+.about-box{
+    max-width:800px;
+    margin:auto;
+    padding:50px;
+    text-align:center;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+}
+
+.about-box p{
+    margin-top:20px;
+    line-height:1.8;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+.petal{
+    position:fixed;
+    top:-50px;
+    font-size:20px;
+    animation:fall linear infinite;
+    pointer-events:none;
+    z-index:-1;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-50px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    nav ul{
+        gap:15px;
+        font-size:.9rem;
+    }
+
+    .title{
+        font-size:3rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🌸 BLOOM</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#flowers">Flowers</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Luxury Flower Collection</h1>
+        <p>
+            Discover elegant floral arrangements crafted with beauty,
+            passion and nature's finest blooms.
+        </p>
+
+        <a href="#flowers" class="btn">Explore Flowers</a>
+    </div>
+</section>
+
+<section class="section" id="flowers">
+    <h2 class="title">Featured Flowers</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://picsum.photos/500/700?random=1">
+            <h3>Rose Collection</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/500/700?random=2">
+            <h3>Tulip Garden</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/500/700?random=3">
+            <h3>Luxury Orchids</h3>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="about-box">
+        <h2 class="title">About Bloom</h2>
+
+        <p>
+            We create premium floral experiences with hand-selected flowers
+            and modern artistic arrangements. Every bouquet is designed to
+            express emotions and celebrate life's beautiful moments.
+        </p>
+    </div>
+</section>
+
+<section class="section contact" id="contact">
+    <h2>Let's Bloom Together</h2>
+    <p>Premium Floral Design & Luxury Arrangements</p>
+
+    <a href="#" class="btn">Contact Us</a>
+</section>
+
+<footer>
+    © 2026 Bloom Flower Studio
+</footer>
+
+<script>
+for(let i=0;i<40;i++){
+
+    const petal=document.createElement("div");
+
+    petal.classList.add("petal");
+    petal.innerHTML="🌸";
+
+    petal.style.left=Math.random()*100+"vw";
+    petal.style.animationDuration=(5+Math.random()*10)+"s";
+    petal.style.animationDelay=Math.random()*5+"s";
+    petal.style.fontSize=(15+Math.random()*20)+"px";
+
+    document.body.appendChild(petal);
+}
+</script>
+
+</body>
+</html>
